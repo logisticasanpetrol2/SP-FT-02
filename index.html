@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso Protegido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .container {
+            background: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Acceso Protegido</h2>
+        <p>Ingresa la contraseña para continuar</p>
+        <input type="password" id="password" placeholder="Contraseña">
+        <br>
+        <button onclick="checkPassword()">Entrar</button>
+        <div id="error" class="error"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "TA02";
+            if (password === correctPassword) {
+                window.location.href = "https://drive.google.com/drive/folders/1WPBSrH-eQcBuVTjG5ngFiDTXi8Ey-Hyk?usp=drive_link";
+            } else {
+                document.getElementById("error").textContent = "Contraseña incorrecta.";
+            }
+        }
+    </script>
+</body>
+</html>
